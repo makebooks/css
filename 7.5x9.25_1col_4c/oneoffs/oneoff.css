@@ -1,0 +1,608 @@
+@charset "UTF-8";
+
+@import "DYNAMIC CSS PLACEHOLDER";
+
+/*--------Put Your Custom CSS Rules Below--------*/
+
+@charset "UTF-8";
+
+/* Nellie's styles */
+
+/* new trim styles */
+
+@page { 
+	size: 7.5in 9.25in;
+	margin-top: 0.44in;
+	margin-bottom: 0.56in;
+	padding-top: .23in;
+	padding-bottom: 0.34in;
+	border-bottom: 0pt;
+}
+
+@page:right {
+margin-left: 1in;
+}
+
+@page:left {
+margin-right: 1in;
+}
+
+@page tableofcontents:first {
+	padding-right: 0in;
+	padding-left: 1.5in;
+		@top-right {
+		content: normal;
+		}
+		@bottom-left {
+		content: normal;
+		}
+		@bottom-center {
+		content: normal;
+		}
+		@bottom-right {
+		content: counter(page, lower-roman);
+		font-family: "BentonSans-Book";
+		font-size: 9pt;
+		font-weight: normal;
+		text-align: right;
+		vertical-align: top;
+		width: .45in;
+		margin-top: 1pt;
+	}
+}
+
+@page tableofcontents:left {
+	padding-right: 1in;
+	padding-left: .45in;
+		@top-left {
+		content: none;
+		}
+		@top-right {
+		content: none;
+		}
+			@bottom-right {
+		border-top: .25pt solid cmyk(0%,0%,0%,100%);
+		padding-top: 3pt;
+		margin: 1pt 0 0 0;
+		width: .45in;
+		}
+		@bottom-center {
+		text-align: left;
+		content: string(Booktitle);
+		border-top: .25pt solid cmyk(0%,0%,0%,100%);
+		font-family: "BentonSans-Book";
+		font-size: 9pt;
+		vertical-align: top;
+		padding-top: 3pt;
+		margin-top: 1pt;
+		}
+		@bottom-left {
+		content: counter(page, lower-roman);
+		font-family: "BentonSans-Book";
+		font-size: 9pt;
+		font-weight: normal;
+		text-align: left;
+		vertical-align: top;
+		width: .45in;
+		margin-top: 1pt;
+		}
+}
+
+@page tableofcontents:right { 
+	padding-right: .45in;
+	padding-left: 1in;
+		@top-right {
+		content: none;
+		}
+		@top-left {
+		content: none;
+		}
+		@bottom-left {
+		border-top: .25pt solid cmyk(0%,0%,0%,100%);
+		padding-top: 3pt;
+		margin: 1pt 0 0 0;
+		width: .45in;
+		}
+		@bottom-center {
+		text-align: right;
+		content: "Table of Contents";
+		border-top: .25pt solid cmyk(0%,0%,0%,100%);
+		font-family: "BentonSans-Book";
+		font-size: 9pt;
+		vertical-align: top;
+		padding-top: 3pt;
+		margin-top: 1pt;
+		}
+		@bottom-right {
+		content: counter(page, lower-roman);
+		font-family: "BentonSans-Book";
+		font-size: 9pt;
+		font-weight: normal;
+		text-align: right;
+		vertical-align: top;
+		width: .45in;
+		margin-top: 1pt;
+		}
+}
+
+/* oneoff styles */
+
+div.toc-title {
+width: 5.6in;
+margin-left: -1.35in;
+padding: .58in 0 0 0;
+}
+
+section.preface {
+	page: frontmattersingle;
+	display: block;
+	page-break-before: right;
+	column-count: 1;
+	column-gap: 0in;
+	column-fill: auto;
+}
+@page frontmattersingle:first { /* first page setting */
+  padding-left: .75in;
+}
+@page frontmattersingle:left { /* left page setting */
+  padding-left: .75in;
+}
+@page frontmattersingle:right { /* right page setup */
+  padding-left: .75in;
+}
+
+section.chapter {
+	page: chaptermastersingle;
+	display: block;
+	page-break-before: right;
+	column-count: 1;
+	column-gap: 0in;
+	column-fill: auto;
+}
+@page chaptermastersingle:first { /* first page setting */
+  padding-left: .75in;
+}
+@page chaptermastersingle:left { /* left page setting */
+  padding-left: .75in;
+}
+
+@page chaptermastersingle:right {
+padding-left: .75in;
+@bottom-center {
+text-align: right;
+content: "Chapter "counter(ChapterNo)":\0020 "string(Chapter);
+border-top: .25pt solid cmyk(0%,0%,0%,100%);
+font-family: "BentonSans-Book";
+font-size: 9pt;
+vertical-align: top;
+padding-top: 3pt;
+margin-top: 1pt;
+}
+}
+
+section.appendix {
+	page: appendixmastersingle;
+	display: block;
+	page-break-before: right;
+	column-count: 1;
+	column-gap: 0in;
+	column-fill: auto;
+}
+@page appendixmastersingle:first { /* first page setting */
+  padding-left: .75in;
+}
+@page appendixmastersingle:left { /* left page setting */
+  padding-left: .75in;
+}
+@page appendixmastersingle:right { /* right page setup */
+  padding-left: .75in;
+}
+
+section.preface > div.titlepage > div > div {
+margin-left: -.85in;
+width: 5.6in;
+}
+
+section.chapter > div.titlepage > div > div, 
+section.appendix > div.titlepage > div > div {
+margin-left: -.85in;
+width: 4.5in;
+}
+
+section.chapter > div.titlepage > div > div:after, 
+section.appendix > div.titlepage > div > div:after {
+	position: fixed;
+	top: 0in;
+	left: 3.82in;
+}
+
+section.chapter > div.titlepage > div > div > h2.title {
+margin: 0 .22in 0 0;
+width: 4.5in;
+column-span: all;
+vertical-align: bottom;
+position: absolute;
+bottom: .3in;
+string-set: Chapter self;
+}
+
+section.appendix > div.titlepage > div > div > h2.title {
+margin: 0 .22in 0 0;
+width: 4.5in;
+column-span: all;
+vertical-align: bottom;
+position: absolute;
+bottom: .3in;
+string-set: Appendix self;
+}
+
+div.sidebar {
+	column-count: 2;
+	column-gap: .12in;
+	column-fill: balance;
+	margin-top: 4pt;
+	page-break-before: auto;
+	page-break-inside: avoid;
+	break-inside: auto;
+	margin-left: -1in;
+	width: 5.5in;
+}
+
+div.sidebar.fullpage {
+	page-break-inside: avoid;
+	break-inside: auto;
+	margin-left: -1in;
+	width: 5.5in;
+}
+
+div.sidebar.onecolumn {
+	column-count: 1;
+}
+
+div.sidebar div.sidebar-title {
+	color: #fff;
+	font-family: "Camo SansHeavy";
+	font-size: 14pt;
+	line-height: 107%;
+	background-color: cmyk(100%,0%,0%,20%);
+	margin: 0 -.12in .12in -.12in;
+	padding: .06in .12in .08in .12in;
+	column-span: all;
+}
+
+div.sidebar.sidebyside {
+  font-size: 10.5pt;
+  margin: 0 0 6pt -1in;
+	border: 0pt solid cmyk(100%,0%,0%,20%);
+	background-color: cmyk(0%,0%,0%,0%);
+	padding: 0 0in 0in 0in;
+	column-count: 2;
+	column-gap: .21in;
+	column-fill: balance;
+	page-break-before: auto;
+	-ah-float: none;
+	-ah-float-reference: normal;
+	-ah-float-wrap: none;
+	-ah-float-y: none;
+	-ah-float-x: none;
+	-ah-float-centering-y: none;
+	-ah-float-margin-y: 0 0; /* When two values are specified, the first
+  one will be the value of the before side, the next one will be the
+  value of the after side. -AH docs, v6M R1 */
+	-ah-float-float-margin-y: 0 0;
+	page-break-inside: avoid;
+	break-inside: auto;
+	width: 5.75in;
+}
+
+div.sidebar.sidebyside p {
+  font-size: 10.5pt;
+  }
+
+div.sidebar.sidebyside img {
+max-width: 2.77in;
+}
+
+div.figure.fullpage {
+text-align: right;
+    -ah-float: none; 
+    -ah-float-reference: normal; 
+    -ah-float-wrap: none;
+    -ah-float-y: none;
+    -ah-float-x: none;
+    -ah-float-centering-y: none;
+    -ah-float-margin-y: 0 0; /* When two values are specified, the first
+    one will be the value of the before side, the next one will be the
+    value of the after side. -AH docs, v6M R1 */
+    -ah-float-float-margin-y: 0 0;
+    display: block;
+    margin-bottom: 8pt;
+    margin-left: -1in;
+    width: 5.75in;
+}
+
+div.figure img {
+max-width: 4.75in;
+}
+
+div.informalfigure img {
+max-width: 4.75in;
+}
+
+div.figure.fullpage img {
+max-width: 5.75in;
+}
+
+div.figure.fullpage div.figure-title { 
+	text-align: left;
+	padding-left: 1in;
+}
+
+div.figure div.mediaobject, 
+div.figure div.mediaobject td, 
+div.figure div.mediaobject table, 
+div.figure div.mediaobject tr,
+div.figure div.mediaobject tbody, 
+div.figure div.figure-contents {
+  text-align: left;
+}
+
+div.figure.fullpage table {
+width: 100%;
+}
+
+div.figure.fullpage table tr td {
+    width: 100%;
+	/* text-align: left;*/
+}
+
+/*div.figure.fullpage div.mediaobject {
+	text-align: right;
+}*/
+
+div.figure.fullpage div.mediaobject, 
+div.figure.fullpage div.mediaobject td, 
+div.figure.fullpage div.mediaobject table, 
+div.figure.fullpage div.mediaobject tr,
+div.figure.fullpage div.mediaobject tbody, 
+div.figure.fullpage div.figure-contents {
+  text-align: right;
+}
+
+div.example {
+    -ah-float: none; 
+    -ah-float-reference: none; 
+    -ah-float-wrap: none;
+    -ah-float-y: none;
+    -ah-float-x: none;
+    -ah-float-centering-y: none;
+    -ah-float-margin-y: 0; /* When two values are specified, the first
+    one will be the value of the before side, the next one will be the
+    value of the after side. -AH docs, v6M R1 */
+    -ah-float-float-margin-y: 0;
+    background-color: cmyk(8%,0%,0%,2%);
+    margin: 12pt 0 12pt 0;
+    padding: 0 .12in .12in .12in;
+    margin-left: -1in;
+    width: 5.51in; 
+}
+
+div.example-title {
+page-break-inside: avoid;
+page-break-before: avoid;
+}
+
+div.note:before, div.tip:before {
+  content: url("admon/pencil_icon_color.pdf");
+  width: 0.465in;
+  margin-right: 0.05in;
+  margin-left: 0.2in;
+  -ah-float: wrap left keep;
+}
+
+div.warning:before, div.caution:before {
+  content: url("admon/bomb_icon_color.pdf");
+  width: 0.338in;
+  margin-right: 0.05in;
+  margin-left: 0.2in;
+  -ah-float: wrap left keep;
+}
+
+div.note.safaribooksonline:before {
+  content: url("admon/SafariLogo4C.tif");
+  width: 1in;
+  padding-top: 5pt;
+  margin-right: 0.05in;
+  margin-left: 0;
+  -ah-float: left wrap;
+}
+
+
+div.note {
+    page-break-inside: avoid;
+	margin-left: -1in;
+}
+div.warning {
+    page-break-inside: avoid;
+	margin-left: -1in;
+}
+div.tip {
+    page-break-inside: avoid;
+	margin-left: -1in;
+}
+
+div.table.fullpage {
+text-align: left;
+    -ah-float: none; 
+    -ah-float-reference: normal; 
+    -ah-float-wrap: none;
+    -ah-float-y: none;
+    -ah-float-x: none;
+    -ah-float-centering-y: none;
+    -ah-float-margin-y: 0 0; /* When two values are specified, the first
+    one will be the value of the before side, the next one will be the
+    value of the after side. -AH docs, v6M R1 */
+    -ah-float-float-margin-y: 0 0;
+    display: block;
+    margin-bottom: 8pt;
+    width: 5.75in;
+}
+
+div.table{
+	text-align: left;
+}
+
+div.table.fullpage div.table-title { 
+	text-align: left;
+	padding:0;
+	margin:0;
+}
+
+/* Brian's styles */
+
+p.fullpage {
+    -ah-float: none; 
+    -ah-float-reference: none; 
+    -ah-float-wrap: none;
+    -ah-float-y: none;
+    -ah-float-x: none;
+    -ah-float-centering-y: none;
+    -ah-float-margin-y: 0; /* When two values are specified, the first
+  one will be the value of the before side, the next one will be the
+  value of the after side. -AH docs, v6M R1 */
+    -ah-float-float-margin-y: 0;
+    column-span: all;
+    width: 100%;
+}
+
+div.note.fullpage {
+    -ah-float: none; 
+    -ah-float-reference: none; 
+    -ah-float-wrap: none;
+    -ah-float-y: none;
+    -ah-float-x: none;
+    -ah-float-centering-y: none;
+    -ah-float-margin-y: 0; /* When two values are specified, the first
+    one will be the value of the before side, the next one will be the
+    value of the after side. -AH docs, v6M R1 */
+    -ah-float-float-margin-y: 0;
+    column-span: all;
+}
+
+div.informaltable.fullpage {
+    column-span: all;
+}
+
+div.informaltable.fullpage tbody tr:first-of-type {
+    border-top: none;
+    margin-top: .3in;
+}
+
+div.informaltable.fullpage tbody tr {
+    border-top: none;
+    margin-top: .3in;
+}
+
+div.informaltable.fullpage tbody tr > td {
+    border-right: none;
+    width: 2.89in;
+    vertical-align: bottom;
+    padding-right: .1in;
+}
+
+div.informaltable.fullpage tbody tr > td:last-of-type {
+    border-right: none;
+    width: 2.89in;
+    vertical-align: bottom;
+    padding-left: .1in;
+    
+}
+
+p.hard-pagebreak {
+  page-break-after: always;
+}
+
+.column-break-before {
+  column-break-before: always;
+}
+
+.column-break-after {
+  display: none; /* This doesn't seem to work; figures still get out of alignment in sidebyside */
+  /*
+  column-break-after: always;
+  */
+}
+
+div.part h1.title {
+  font-size: 30.93pt;
+  font-weight: 600;
+  margin-bottom: 2in;
+  text-align: right;
+  display: block;
+  string-set: Part self;
+  font-family: "BentonSans-Book";
+  color: cmyk(100%,0%,0%,40%);
+}
+
+div.part h1.title:before {
+  text-align: right;
+  font-family: "Camo SansHeavy";
+  color: cmyk(0%,100%,100%,0%);
+  border-bottom: cmyk(100%,0%,0%,20%) 0.25pt solid;
+  display: block;
+  counter-increment: PartNo;
+  content: "Part " counter(PartNo, upper-roman);
+  text-transform: uppercase;
+  font-size: 19.88pt;
+  margin: 0;
+  margin-bottom: .1in;
+}
+
+div.toc ul li.part {
+  font-family: "Camo SansHeavy";
+  color: cmyk(0%,100%,100%,0%);
+}
+
+div.toc ul li.part:before {
+  content: "Part " counter(PartNo, upper-roman) ".\2003";
+  counter-increment: PartNo;
+}
+
+p.lede {
+	color: cmyk(100%,0%,0%,40%);
+	font-family: "MyriadPro-Regular";
+	font-style: italic;
+	font-weight: normal;
+	font-size: 12pt;
+}
+
+div.chapteropener {
+	column-span: all;
+	padding-right: 1in;
+	margin-top: -1.3in;
+	margin-bottom: 1.09in;
+}
+
+div.variablelist-title span.formalpara-title {
+  font-family: "MyriadPro-Regular";
+  display: block;
+  font-size: 10.5pt;
+  margin-top: 2pt;
+  margin-bottom: 6pt;
+  font-style: italic;
+  page-break-after: avoid;
+  font-weight: 600;
+}
+
+div.sect3 > div.titlepage > div > div > h4.title {
+	color: cmyk(100%,0%,0%,40%);
+	font-family: "BentonSans-Book";
+	font-style: normal;
+	font-size: 10pt;
+	text-align: left;
+	line-height: 92%;
+  	padding: 0;
+  	margin-bottom: .03in;
+  	page-break-after: avoid;
+}
+
